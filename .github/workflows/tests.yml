@@ -22,7 +22,7 @@ jobs:
       
     - name: Test formula syntax
       run: |
-        brew audit --strict Formula/*.rb
+        brew audit --strict localsearch
         
     # Commented out for now since binaries might not be available during testing
     # - name: Test installation
