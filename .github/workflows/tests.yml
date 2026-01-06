@@ -1,0 +1,31 @@
+name: Test Formulas
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-formulas:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Homebrew
+      id: set-up-homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+      
+    - name: Test formula syntax
+      run: |
+        brew audit --strict Formula/*.rb
+        
+    # Commented out for now since binaries might not be available during testing
+    # - name: Test installation
+    #   run: |
+    #     brew install --build-from-source Formula/localsearch.rb
+    #     brew test localsearch

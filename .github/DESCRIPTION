@@ -1,0 +1,12 @@
+# Homebrew Tools Tap
+
+A collection of CLI tools by nnanto, packaged for easy installation via Homebrew.
+
+Current tools:
+- localsearch: Fast local search with vector embeddings
+
+To add this tap and install tools:
+```bash
+brew tap nnanto/tools
+brew install localsearch
+```
