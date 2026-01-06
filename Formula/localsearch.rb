@@ -6,15 +6,15 @@ class Localsearch < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/nnanto/localsearch/releases/download/v#{version}/localsearch-macos-aarch64.tar.gz"
-      sha256 "SHA256_FOR_AARCH64_TARBALL"  # Replace with actual SHA256 after release
+      url "https://github.com/nnanto/localsearch/releases/download/1.1.0/localsearch-macos-aarch64.tar.gz"
+      sha256 "sha256_for_aarch64_tarball"
     else
-      url "https://github.com/nnanto/localsearch/releases/download/v#{version}/localsearch-macos-x86_64.tar.gz"
-      sha256 "SHA256_FOR_X86_64_TARBALL"  # Replace with actual SHA256 after release
+      url "https://github.com/nnanto/localsearch/releases/download/1.1.0/localsearch-macos-x86_64.tar.gz"
+      sha256 "sha256_for_x86_64_tarball"
     end
   elsif OS.linux?
-    url "https://github.com/nnanto/localsearch/releases/download/v#{version}/localsearch-linux-x86_64.tar.gz"
-    sha256 "SHA256_FOR_LINUX_TARBALL"  # Replace with actual SHA256 after release
+    url "https://github.com/nnanto/localsearch/releases/download/1.1.0/localsearch-linux-x86_64.tar.gz"
+    sha256 "sha256_for_linux_tarball"
   end
 
   def install
